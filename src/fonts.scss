@@ -1,0 +1,104 @@
+/*#region RobotoSlab*/
+
+@font-face {
+  font-family: 'Roboto Slab';
+  src: local('Roboto Slab Thin'), local('RobotoSlab-Thin'),
+  url('/static/fonts/RobotoSlab/robotoslabthin.woff2') format('woff2'),
+  url('/static/fonts/RobotoSlab/robotoslabthin.woff') format('woff'),
+  url('/static/fonts/RobotoSlab/robotoslabthin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  src: local('Roboto Slab Light'), local('RobotoSlab-Light'),
+  url('/static/fonts/RobotoSlab/robotoslablight.woff2') format('woff2'),
+  url('/static/fonts/RobotoSlab/robotoslablight.woff') format('woff'),
+  url('/static/fonts/RobotoSlab/robotoslablight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  src: local('Roboto Slab Regular'), local('RobotoSlab-Regular'),
+  url('/static/fonts/RobotoSlab/robotoslabregular.woff2') format('woff2'),
+  url('/static/fonts/RobotoSlab/robotoslabregular.woff') format('woff'),
+  url('/static/fonts/RobotoSlab/robotoslabregular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto Slab';
+  src: local('Roboto Slab Bold'), local('RobotoSlab-Bold'),
+  url('/static/fonts/RobotoSlab/robotoslabbold.woff2') format('woff2'),
+  url('/static/fonts/RobotoSlab/robotoslabbold.woff') format('woff'),
+  url('/static/fonts/RobotoSlab/robotoslabbold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/*#endregion*/
+
+/*#region BebasNeue*/
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('/static/fonts/BebasNeue/BebasNeueRegular.eot'), local('Bebas Neue Regular'), local('BebasNeueRegular'),
+  url('/static/fonts/BebasNeue/BebasNeueRegular.eot?#iefix') format('embedded-opentype'),
+  url('/static/fonts/BebasNeue/BebasNeueRegular.woff') format('woff'),
+  url('/static/fonts/BebasNeue/BebasNeueRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('/static/fonts/BebasNeue/BebasNeueBold.eot'), local('Bebas Neue Bold'), local('BebasNeueBold'),
+  url('/static/fonts/BebasNeue/BebasNeueBold.eot?#iefix') format('embedded-opentype'),
+  url('/static/fonts/BebasNeue/BebasNeueBold.woff') format('woff'),
+  url('/static/fonts/BebasNeue/BebasNeueBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/*#endregion*/
+
+/*#region UltimaPro*/
+
+@font-face {
+  font-family: 'Ultima Pro';
+  src: url('/static/fonts/UltimaPro/UltimaProLt.eot'), local('Ultima Pro Light'), local('UltimaProLight'),
+  url('/static/fonts/UltimaPro/UltimaProLt.eot?#iefix') format('embedded-opentype'),
+  url('/static/fonts/UltimaPro/UltimaProLt.woff') format('woff'),
+  url('/static/fonts/UltimaPro/UltimaProLt.woff2') format('woff2'),
+  url('/static/fonts/UltimaPro/UltimaProLt.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ultima Pro';
+  src: url('/static/fonts/UltimaPro/UltimaPro.eot'), local('Ultima Pro Regular'), local('UltimaProRegular'),
+  url('/static/fonts/UltimaPro/UltimaPro.eot?#iefix') format('embedded-opentype'),
+  url('/static/fonts/UltimaPro/UltimaPro.woff') format('woff'),
+  url('/static/fonts/UltimaPro/UltimaPro.woff2') format('woff2'),
+  url('/static/fonts/UltimaPro/UltimaPro.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Ultima Pro';
+  src: url('/static/fonts/UltimaPro/UltimaPro-Bold.eot'), local('Ultima Pro Bold'), local('UltimaProBold'),
+  url('/static/fonts/UltimaPro/UltimaPro-Bold.eot?#iefix') format('embedded-opentype'),
+  url('/static/fonts/UltimaPro/UltimaPro-Bold.woff') format('woff'),
+  url('/static/fonts/UltimaPro/UltimaPro-Bold.woff2') format('woff2'),
+  url('/static/fonts/UltimaPro/UltimaPro-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/*#endregion*/

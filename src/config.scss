@@ -1,0 +1,16 @@
+$background-color: radial-gradient(circle at center, #009ac5, #00789e, #004b6a, #002139);
+
+$main-font: "Roboto Slab", Arial, sans-serif;
+
+$main-font-size: 60px;
+
+$main-font-weight: normal;
+
+$main-font-color: white;
+
+$size-base: 16px;
+
+@function ptr($size) {
+  @return #{$size / $size-base}rem;
+}
+

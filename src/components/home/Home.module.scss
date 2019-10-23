@@ -1,0 +1,89 @@
+@import "../../config";
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mediativeText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: $main-font;
+  font-size: ptr(33px);
+  font-weight: 100;
+  color: #00ed48;
+  position: absolute;
+  z-index: 6;
+
+  span {
+    font-size: ptr(38px);
+  }
+}
+
+.mediativeGrid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 5;
+
+  .mediative-grid img {
+    height: 400px;
+    width: 400px;
+  }
+}
+
+.mediativeRadius1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: ptr(500px);
+  height: ptr(500px);
+  background: transparent;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 4;
+  box-shadow: 0 0 0 1px rgba(0, 179, 229, 0.8);
+}
+
+.mediativeRadius2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: ptr(600px);
+  height: ptr(600px);
+  background: transparent;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 3;
+  box-shadow: 0 0 0 1px rgba(0, 179, 229, 0.6);
+}
+
+.mediativeRadius3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: ptr(700px);
+  height: ptr(700px);
+  background: transparent;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+  box-shadow: 0 0 0 1px rgba(0, 179, 229, 0.4);
+}
+
+.mediativeRadius4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: ptr(800px);
+  height: ptr(800px);
+  background: transparent;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  box-shadow: 0 0 0 1px rgba(0, 179, 229, 0.2);
+}

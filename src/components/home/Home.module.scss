@@ -17,9 +17,11 @@
   color: #00ed48;
   position: absolute;
   z-index: 6;
+  margin: ptr(-44px) 0 0 ptr(-128.5px);
 
   span {
-    font-size: ptr(38px);
+    font-size: ptr(33px);
+    //font-size: ptr(38px);
   }
 }
 
@@ -27,7 +29,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed;
   z-index: 5;
 
   .mediative-grid img {
@@ -46,6 +48,7 @@
   border-radius: 50%;
   position: absolute;
   z-index: 4;
+  margin: ptr(-250px) 0 0 ptr(-250px);
   box-shadow: 0 0 0 1px rgba(0, 179, 229, 0.8);
 }
 
@@ -59,6 +62,7 @@
   border-radius: 50%;
   position: absolute;
   z-index: 3;
+  margin: ptr(-300px) 0 0 ptr(-300px);
   box-shadow: 0 0 0 1px rgba(0, 179, 229, 0.6);
 }
 
@@ -72,6 +76,7 @@
   border-radius: 50%;
   position: absolute;
   z-index: 2;
+  margin: ptr(-350px) 0 0 ptr(-350px);
   box-shadow: 0 0 0 1px rgba(0, 179, 229, 0.4);
 }
 
@@ -85,5 +90,16 @@
   border-radius: 50%;
   position: absolute;
   z-index: 1;
+  margin: ptr(-400px) 0 0 ptr(-400px);
   box-shadow: 0 0 0 1px rgba(0, 179, 229, 0.2);
+}
+
+.linkClass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 7;
+  text-decoration: none;
+  color: white;
 }

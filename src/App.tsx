@@ -1,5 +1,6 @@
 import * as React from 'react';
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import Countdown from "react-countdown-now";
 import styles from './App.module.scss';
 import Home from "./components/home/Home";
 import Menu from "./components/menu/Menu";

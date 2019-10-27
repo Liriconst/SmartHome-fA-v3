@@ -1,0 +1,137 @@
+@import "../../config";
+
+/*region Grid*/
+.gridAnimate-appear {
+  opacity: 0.01;
+  transform: scale(2);
+}
+
+@keyframes gridAnimateFrame {
+  0% {
+    opacity: 0.01;
+    transform: scale(2);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.gridAnimateFrame {
+  animation-name: gridAnimateFrame;
+}
+
+.gridAnimate-appear-active {
+  animation: gridAnimateFrame 1000ms ease-out;
+  transition: all 1s ease-out;
+}
+/*endregion Grid*/
+
+/*region Frames*/
+@keyframes radiusAnimateFrame {
+  0% {
+    opacity: 0.01;
+    transform: scale(0.75);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.radiusAnimateFrame {
+  animation-name: radiusAnimateFrame;
+}
+
+@keyframes helloAnimateFrame {
+  0% {
+    opacity: 0.01;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.helloAnimateFrame {
+  animation-name: helloAnimateFrame;
+}
+
+@keyframes ByeAnimateFrame {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.ByeAnimateFrame {
+  animation-name: ByeAnimateFrame;
+}
+/*endregion Frames*/
+
+/*region Radius1*/
+.radius1Animate-appear {
+  opacity: 0.01;
+  transform: scale(0.75);
+}
+
+.radius1Animate-appear-active {
+  animation: radiusAnimateFrame 500ms ease-out;
+}
+/*endregion Radius1*/
+
+/*region Radius2*/
+.radius2Animate-appear {
+  opacity: 0.01;
+  transform: scale(0.75);
+}
+
+.radius2Animate-appear-active {
+  animation: radiusAnimateFrame 400ms ease-out;
+}
+/*endregion Radius2*/
+
+/*region Radius3*/
+.radius3Animate-appear {
+  opacity: 0.01;
+  transform: scale(0.75);
+}
+
+.radius3Animate-appear-active {
+  animation: radiusAnimateFrame 300ms ease-out;
+}
+/*endregion Radius3*/
+
+/*region Radius4*/
+.radius4Animate-appear {
+  opacity: 0.01;
+  transform: scale(0.75);
+}
+
+.radius4Animate-appear-active {
+  animation: radiusAnimateFrame 500ms ease-out;
+}
+/*endregion Radius4*/
+
+/*region Hello*/
+.radius4Animate-enter {
+  opacity: 0.01;
+}
+
+.helloAnimate-enter-active {
+  animation: helloAnimateFrame 1250ms ease-out;
+}
+
+.radius4Animate-leave {
+  opacity: 1;
+}
+
+.helloAnimate-leave-active {
+  animation: ByeAnimateFrame 1250ms ease-out;
+}
+/*endregion Hello*/

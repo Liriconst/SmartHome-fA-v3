@@ -1,5 +1,6 @@
 import * as React from "react";
 import styles from './Heating.module.scss';
+import {Link} from "react-router-dom";
 
 class Heating extends React.Component {
     public render(): React.ReactNode {
@@ -8,6 +9,7 @@ class Heating extends React.Component {
                 <div className={styles.htd}>
                 <p className={styles.htd}>12313</p>
                 </div>
+                <Link className={styles.linkClass} to="/">Home</Link>
             </div>
         );
     }

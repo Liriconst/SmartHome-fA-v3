@@ -1,0 +1,65 @@
+@import "../../config";
+
+.creature {
+  width:  200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #3ac;
+  position: relative;
+  animation: eye 1s ease-in-out;
+}
+
+.creature1 {
+  width:  200px;
+  height: 200px;
+  border-radius: 50%;
+  background: red;
+  position: relative;
+  //animation: eye2 1s ease-in-out;
+}
+
+//.creature::before, .creature::after {
+//  content: '';
+//  position: absolute;
+//  width: 30px;
+//  height: 40px;
+//  border-radius: 50%;
+//  background: #000;
+//  top: 40px;
+//  animation: eye 3s ease-in-out infinite;
+//}
+
+//.creature::before { left: 55px; }
+//
+//.creature::after { right: 55px; }
+
+@keyframes eye {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes eye2 {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes eye3 {
+  0% {
+    background: #3ac;
+  }
+
+  100% {
+    background: red;
+  }
+}

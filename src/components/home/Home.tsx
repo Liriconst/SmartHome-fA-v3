@@ -112,11 +112,15 @@ class Home extends React.Component {
                     </div>
                     <div>
                         {(this.state as any).timerHello ? (
-                                <ReactCSSTransitionGroup transitionName="helloAnimate"
-                                                         transitionEnterTimeout={1250}
-                                                         transitionLeaveTimeout={1250}>
-                                    <div className={styles.mediativeText}>ЗДРАВСТВУЙТЕ<span>АЛЕКСАНДР</span></div>
-                                </ReactCSSTransitionGroup>
+                                <div>
+                                    <ReactCSSTransitionGroup transitionName="helloAnimate"
+                                                             transitionAppear={true}
+                                                             transitionAppearTimeout={2000}
+                                                             transitionDisappear={true}
+                                                             transitionDisappearTimeout={3000}>
+                                        <div className={styles.mediativeText}>ЗДРАВСТВУЙТЕ<span>АЛЕКСАНДР</span></div>
+                                    </ReactCSSTransitionGroup>
+                                </div>
                             ) :
                             null
                         }

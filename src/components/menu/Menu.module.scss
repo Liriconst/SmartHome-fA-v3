@@ -1,0 +1,127 @@
+@import "../../config";
+
+@mixin mainDisplayFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainMenu {
+  @include mainDisplayFlex;
+  flex-direction: column;
+}
+
+.menuHeatingCooling {
+  @include mainDisplayFlex;
+  flex-direction: row;
+}
+
+.menuStatisticInfo {
+  @include mainDisplayFlex;
+  flex-direction: row;
+  margin-top: ptr(128px);
+}
+
+@mixin menuActiveBlock {
+  @include mainDisplayFlex;
+  flex-direction: row;
+  height: ptr(192px);
+  width: ptr(192px);
+  background: #122d4f;
+  border-radius: ptr(16px);
+  box-shadow: 0 0 10px 0 #61a7d8,
+              0 0 10px 0 #61a7d8,
+              0 0 10px 0 #61a7d8,
+              0 13px 21px 0 #0c182f inset;
+
+  #img1 {
+    height: ptr(96px);
+    display: block;
+  }
+
+  #img2 {
+    height: ptr(96px);
+    display: none;
+  }
+
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 15px 0 #6fbbf0,
+                0 0 15px 0 #6fbbf0,
+                0 0 15px 0 #6fbbf0;
+    background: #1d4a84;
+    transition: 0.15s;
+
+    #img1 {
+      height: ptr(96px);
+      display: none;
+    }
+
+    #img2 {
+      height: ptr(96px);
+      display: block;
+    }
+  }
+}
+
+@mixin menuPassiveBlock {
+  @include mainDisplayFlex;
+  flex-direction: row;
+  height: ptr(192px);
+  width: ptr(192px);
+  background: #5e191d;
+  border-radius: ptr(16px);
+  box-shadow: 0 0 10px 0 #d55057,
+              0 0 10px 0 #D55057,
+              0 0 10px 0 #D55057,
+              0 13px 21px 0 #291214 inset;
+
+  #img1 {
+    height: ptr(96px);
+    display: block;
+  }
+
+  #img2 {
+    height: ptr(96px);
+    display: none;
+  }
+
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0 0 15px 0 #e4636b,
+                0 0 15px 0 #e4636b,
+                0 0 15px 0 #e4636b;
+    background: #993a3f;
+    transition: 0.15s;
+
+    #img1 {
+      height: ptr(96px);
+      display: none;
+    }
+
+    #img2 {
+      height: ptr(96px);
+      display: block;
+    }
+  }
+}
+
+.menuHeating {
+  @include menuActiveBlock;
+}
+
+.menuCooling {
+  @include menuPassiveBlock;
+  margin-left: ptr(128px);
+}
+
+.menuStatistic {
+  @include menuPassiveBlock;
+}
+
+.menuInfo {
+  @include menuPassiveBlock;
+  margin-left: ptr(128px);
+}

@@ -60,7 +60,7 @@
   animation-name: helloAnimateFrame;
 }
 
-@keyframes ByeAnimateFrame {
+@keyframes byeAnimateFrame {
   0% {
     opacity: 1;
   }
@@ -69,8 +69,8 @@
   }
 }
 
-.ByeAnimateFrame {
-  animation-name: ByeAnimateFrame;
+.byeAnimateFrame {
+  animation-name: byeAnimateFrame;
 }
 /*endregion Frames*/
 
@@ -119,19 +119,19 @@
 /*endregion Radius4*/
 
 /*region Hello*/
-.radius4Animate-enter {
+.helloAnimate-appear {
   opacity: 0.01;
 }
 
-.helloAnimate-enter-active {
-  animation: helloAnimateFrame 1250ms ease-out;
+.helloAnimate-appear-active {
+  animation: helloAnimateFrame 2000ms ease-out;
 }
 
-.radius4Animate-leave {
+.helloAnimate-disappear {
   opacity: 1;
 }
 
-.helloAnimate-leave-active {
-  animation: ByeAnimateFrame 1250ms ease-out;
+.helloAnimate-disappear-active {
+  animation: byeAnimateFrame 3000ms ease-out;
 }
 /*endregion Hello*/

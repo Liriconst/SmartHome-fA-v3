@@ -4,45 +4,93 @@ import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import styles from './Home.module.scss';
 import './HomeAnimation.scss';
 
-class Home extends React.Component {
+class Home extends React.Component<{}, {
+    checkFirstOpen?: undefined,
+    firstOpen?: undefined,
+    timerGrid?: boolean,
+    timerRadius1?: boolean,
+    timerRadius2?: boolean,
+    timerRadius3?: boolean,
+    timerRadius4?: boolean,
+    timerTextAdd?: boolean,
+    timerTextDel?: boolean,
+}> {
     constructor(props: any) {
         super(props);
         // @ts-ignore
         this.state = {
             firstOpen: (window as any).checkFirstOpen,
+            timerGrid: false,
             timerRadius1: false,
             timerRadius2: false,
             timerRadius3: false,
             timerRadius4: false,
-            timerHello: false,
+            timerTextAdd: false,
+            timerTextDel: false,
         }
     }
 
+    private timer1?: NodeJS.Timeout;
+    private timer2?: NodeJS.Timeout;
+    private timer3?: NodeJS.Timeout;
+    private timer4?: NodeJS.Timeout;
+    private timer5?: NodeJS.Timeout;
+    private timer6?: NodeJS.Timeout;
+    private timer7?: NodeJS.Timeout;
+
     componentDidMount() {
-        (this as any).timer = setTimeout(
-            () => this.setState(prevState => ({timerRadius1: !(prevState as any).timerRadius1})),
-            800,
+        this.timer1 = setTimeout(
+            () => this.setState({timerGrid: !this.state.timerGrid}),
+            0,
         );
-        (this as any).timer = setTimeout(
-            () => this.setState(prevState => ({timerRadius2: !(prevState as any).timerRadius2})),
-            1200,
+        this.timer2 = setTimeout(
+            () => this.setState({timerRadius1: !this.state.timerRadius1}),
+            1250,
         );
-        (this as any).timer = setTimeout(
-            () => this.setState(prevState => ({timerRadius3: !(prevState as any).timerRadius3})),
-            1500,
+        this.timer3 = setTimeout(
+            () => this.setState({timerRadius2: !this.state.timerRadius2}),
+            1450,
         );
-        (this as any).timer = setTimeout(
-            () => this.setState(prevState => ({timerRadius4: !(prevState as any).timerRadius4})),
-            1700,
+        this.timer4 = setTimeout(
+            () => this.setState({timerRadius3: !this.state.timerRadius3}),
+            1650,
         );
-        (this as any).timer = setTimeout(
-            () => this.setState(prevState => ({timerHello: !(prevState as any).timerHello})),
-            2100,
+        this.timer5 = setTimeout(
+            () => this.setState({timerRadius4: !this.state.timerRadius4}),
+            1850,
+        );
+        this.timer6 = setTimeout(
+            () => this.setState({timerTextAdd: !this.state.timerTextAdd}),
+            2400,
+        );
+        this.timer7 = setTimeout(
+            () => this.setState({timerTextDel: !this.state.timerTextDel}),
+            3500,
         );
     }
 
     componentWillUnmount() {
-        clearInterval((this as any).timer);
+        if (this.timer1) {
+            clearTimeout(this.timer1);
+        }
+        if (this.timer2) {
+            clearTimeout(this.timer2);
+        }
+        if (this.timer3) {
+            clearTimeout(this.timer3);
+        }
+        if (this.timer4) {
+            clearTimeout(this.timer4);
+        }
+        if (this.timer5) {
+            clearTimeout(this.timer5);
+        }
+        if (this.timer6) {
+            clearTimeout(this.timer6);
+        }
+        if (this.timer7) {
+            clearTimeout(this.timer7);
+        }
     }
 
     public render(): React.ReactNode {
@@ -57,75 +105,18 @@ class Home extends React.Component {
             (window as any).checkFirstOpen = true;
             return (
                 <div className={styles.home}>
-                    <div>
-                        {(this.state as any).timerRadius4 ? (
-                                <ReactCSSTransitionGroup transitionName="radius4Animate"
-                                                         transitionAppear={true}
-                                                         transitionAppearTimeout={500}>
-                                    <span className={styles.mediativeRadius4}/>
-                                </ReactCSSTransitionGroup>
-                            ) :
-                            null
-                        }
-                    </div>
-                    <div>
-                        {(this.state as any).timerRadius3 ? (
-                                <ReactCSSTransitionGroup transitionName="radius3Animate"
-                                                         transitionAppear={true}
-                                                         transitionAppearTimeout={400}>
-                                    <span className={styles.mediativeRadius3}/>
-                                </ReactCSSTransitionGroup>
-                            ) :
-                            null
-                        }
-                    </div>
-                    <div>
-                        {(this.state as any).timerRadius2 ? (
-                                <ReactCSSTransitionGroup transitionName="radius2Animate"
-                                                         transitionAppear={true}
-                                                         transitionAppearTimeout={400}>
-                                    <span className={styles.mediativeRadius2}/>
-                                </ReactCSSTransitionGroup>
-                            ) :
-                            null
-                        }
-                    </div>
-                    <div>
-                        {(this.state as any).timerRadius1 ? (
-                                <ReactCSSTransitionGroup transitionName="radius1Animate"
-                                                         transitionAppear={true}
-                                                         transitionAppearTimeout={400}>
-                                    <span className={styles.mediativeRadius1}/>
-                                </ReactCSSTransitionGroup>
-                            ) :
-                            null
-                        }
-                    </div>
-                    <div className={styles.mediativeGrid}>
-                        <ReactCSSTransitionGroup transitionName="gridAnimate"
-                                                 transitionAppear={true}
-                                                 transitionAppearTimeout={1000}
-                                                 transitionEnter={false}
-                                                 transitionLeave={false}>
-                            <img src="/static/img/mediative-grid.png" alt={""}/>
-                        </ReactCSSTransitionGroup>
-                    </div>
-                    <div>
-                        {(this.state as any).timerHello ? (
-                                <div>
-                                    <ReactCSSTransitionGroup transitionName="helloAnimate"
-                                                             transitionAppear={true}
-                                                             transitionAppearTimeout={2000}
-                                                             transitionDisappear={true}
-                                                             transitionDisappearTimeout={3000}>
-                                        <div className={styles.mediativeText}>ЗДРАВСТВУЙТЕ<span>АЛЕКСАНДР</span></div>
-                                    </ReactCSSTransitionGroup>
-                                </div>
-                            ) :
-                            null
-                        }
-                    </div>
-                    {/*<Link className={styles.linkClass} to="/heating">Heating</Link>*/}
+                    {this.state.timerGrid &&
+                    <span className={styles.mediativeGrid}><img src="/static/img/mediative-grid.png" alt={""}/></span>}
+                    {this.state.timerRadius1 && <span className={styles.mediativeRadius1}/>}
+                    {this.state.timerRadius2 && <span className={styles.mediativeRadius2}/>}
+                    {this.state.timerRadius3 && <span className={styles.mediativeRadius3}/>}
+                    {this.state.timerRadius4 && <span className={styles.mediativeRadius4}/>}
+                    {this.state.timerTextAdd && <span className={styles.mediativeText}
+                                                      style={this.state.timerTextDel ? {
+                                                          animation: "textDisappear 1000ms ease-out",
+                                                          animationFillMode: "forwards"
+                                                      } : undefined}><p>ЗДРАВСТВУЙТЕ</p><p>АЛЕКСАНДР</p></span>}
+                    {/*/!*<Link className={styles.linkClass} to="/heating">Heating</Link>*!/*/}
                 </div>
             );
         }

@@ -41,7 +41,7 @@ class Menu extends React.Component<{}, {
 
     @autobind
     private goHome(): void {
-        this.setState({timerRadius3: true});
+        this.setState({checkClick: true});
         setTimeout(() => {
             appHistory.push("/");
         }, 3000);

@@ -1,23 +1,31 @@
 @import "../../config";
+@import "HomeAnimation";
 
-.home {
+@mixin mainDisplayFlex {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.home {
+  @include mainDisplayFlex;
+}
+
 .mediativeText {
-  display: flex;
+  @include mainDisplayFlex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   font-family: $main-font;
   font-size: ptr(33px);
   font-weight: 100;
   color: #00ed48;
   position: absolute;
   z-index: 6;
-  margin: ptr(-44px) 0 0 ptr(-128.5px);
+  animation: textAppear 1000ms ease-out;
+
+  p {
+    margin: 0;
+    line-height: 150%;
+  }
 
   span {
     font-size: ptr(33px);
@@ -26,11 +34,10 @@
 }
 
 .mediativeGrid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include mainDisplayFlex;
   position: fixed;
   z-index: 5;
+  animation: gridAppear 1500ms ease-in-out;
 
   .mediative-grid img {
     height: 400px;
@@ -38,68 +45,85 @@
   }
 }
 
-.mediativeRadius1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: ptr(500px);
-  height: ptr(500px);
+@mixin mainMediativeRadius {
+  @include mainDisplayFlex;
   background: transparent;
   border-radius: 50%;
   position: absolute;
+  animation: mainRadiusAppear 500ms ease-out;
+}
+
+.mediativeRadius1 {
+  @include mainMediativeRadius;
+  width: ptr(500px);
+  height: ptr(500px);
   z-index: 4;
-  margin: ptr(-250px) 0 0 ptr(-250px);
   box-shadow: 0 0 0 1px rgba(0, 179, 229, 0.8);
 }
 
 .mediativeRadius2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include mainMediativeRadius;
   width: ptr(600px);
   height: ptr(600px);
-  background: transparent;
-  border-radius: 50%;
-  position: absolute;
   z-index: 3;
-  margin: ptr(-300px) 0 0 ptr(-300px);
   box-shadow: 0 0 0 1px rgba(0, 179, 229, 0.6);
 }
 
 .mediativeRadius3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include mainMediativeRadius;
   width: ptr(700px);
   height: ptr(700px);
-  background: transparent;
-  border-radius: 50%;
-  position: absolute;
   z-index: 2;
-  margin: ptr(-350px) 0 0 ptr(-350px);
   box-shadow: 0 0 0 1px rgba(0, 179, 229, 0.4);
 }
 
 .mediativeRadius4 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include mainMediativeRadius;
   width: ptr(800px);
   height: ptr(800px);
-  background: transparent;
-  border-radius: 50%;
-  position: absolute;
   z-index: 1;
-  margin: ptr(-400px) 0 0 ptr(-400px);
   box-shadow: 0 0 0 1px rgba(0, 179, 229, 0.2);
 }
 
 .linkClass {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include mainDisplayFlex;
   position: fixed;
   z-index: 7;
   text-decoration: none;
   color: white;
+}
+
+@keyframes gridAppear {
+  0% {
+    opacity: 0;
+    transform: scale(2);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes mainRadiusAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.75);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes textAppear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

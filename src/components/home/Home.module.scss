@@ -1,4 +1,5 @@
 @import "../../config";
+@import "../../fonts";
 @import "HomeAnimation";
 
 @mixin mainDisplayFlex {
@@ -40,9 +41,38 @@
   animation: gridAppear 1500ms ease-in-out;
 
   .mediative-grid img {
-    height: 400px;
-    width: 400px;
+    height: ptr(400px);
+    width: ptr(400px);
   }
+}
+
+.mediativeInnerRadius {
+  @include mainDisplayFlex;
+  width: ptr(200px);
+  height: ptr(200px);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 8;
+  font-family: "Ultima Pro", sans-serif;
+  font-weight: normal;
+  font-size: ptr(48px);
+  color: white;
+  line-height: 0%;
+  box-shadow: 0 0 0 ptr(5px) #ffffff,
+              0 0 ptr(15px) 0 #01b9ec,
+              0 0 ptr(15px) 0 #01b9ec,
+              0 0 ptr(15px) 0 #01b9ec,
+              0 0 ptr(15px) 0 #01b9ec inset;
+
+  &:hover {
+    background: white;
+    box-shadow: 0 0 ptr(25px) 0 #01b9ec,
+                0 0 ptr(25px) 0 #01b9ec,
+                0 0 ptr(25px) 0 #01b9ec;
+    color: #005a7b;
+    transition: 0.3s;
+  }
+  animation: mainRadiusAppear 1000ms ease-out;
 }
 
 @mixin mainMediativeRadius {
@@ -91,6 +121,7 @@
   z-index: 7;
   text-decoration: none;
   color: white;
+  line-height: 0%;
 }
 
 @keyframes gridAppear {

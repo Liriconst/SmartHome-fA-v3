@@ -3,17 +3,20 @@ import {Link} from "react-router-dom";
 import ReactCSSTransitionGroup from "react-addons-css-transition-group";
 import styles from './Home.module.scss';
 import './HomeAnimation.scss';
+import autobind from "autobind-decorator";
 
 class Home extends React.Component<{}, {
     checkFirstOpen?: undefined,
     firstOpen?: undefined,
     timerGrid?: boolean,
+    timerRadius0?: boolean,
     timerRadius1?: boolean,
     timerRadius2?: boolean,
     timerRadius3?: boolean,
     timerRadius4?: boolean,
     timerTextAdd?: boolean,
     timerTextDel?: boolean,
+    timerWaiting?: boolean,
 }> {
     constructor(props: any) {
         super(props);
@@ -21,12 +24,14 @@ class Home extends React.Component<{}, {
         this.state = {
             firstOpen: (window as any).checkFirstOpen,
             timerGrid: false,
+            timerRadius0: false,
             timerRadius1: false,
             timerRadius2: false,
             timerRadius3: false,
             timerRadius4: false,
             timerTextAdd: false,
             timerTextDel: false,
+            timerWaiting: false,
         }
     }
 
@@ -37,6 +42,26 @@ class Home extends React.Component<{}, {
     private timer5?: NodeJS.Timeout;
     private timer6?: NodeJS.Timeout;
     private timer7?: NodeJS.Timeout;
+    private timer8?: NodeJS.Timeout;
+    private timer9?: NodeJS.Timeout;
+
+    @autobind
+    private inactivityTime() {
+        const resetTimer = () => {
+            if (this.timer9) {
+                clearTimeout(this.timer9);
+                this.timer9 = setTimeout(this.state.timerWaiting, 15000)
+            }
+        }
+
+        window.onload = resetTimer;
+        document.onmousemove = resetTimer;
+        document.onkeypress = resetTimer;
+    };
+
+    window.onload = function() {
+        inactivityTime();
+    }
 
     componentDidMount() {
         this.timer1 = setTimeout(
@@ -67,6 +92,10 @@ class Home extends React.Component<{}, {
             () => this.setState({timerTextDel: !this.state.timerTextDel}),
             3500,
         );
+        this.timer8 = setTimeout(
+            () => this.setState({timerRadius0: !this.state.timerRadius0}),
+            4500,
+        );
     }
 
     componentWillUnmount() {
@@ -90,6 +119,9 @@ class Home extends React.Component<{}, {
         }
         if (this.timer7) {
             clearTimeout(this.timer7);
+        }
+        if (this.timer8) {
+            clearTimeout(this.timer8);
         }
     }
 
@@ -116,6 +148,7 @@ class Home extends React.Component<{}, {
                                                           animation: "textDisappear 1000ms ease-out",
                                                           animationFillMode: "forwards"
                                                       } : undefined}><p>ЗДРАВСТВУЙТЕ</p><p>АЛЕКСАНДР</p></span>}
+                    {this.state.timerRadius0 && <Link className={styles.linkClass} to="/menu"><span className={styles.mediativeInnerRadius}>СТАРТ</span></Link>}
                     {/*/!*<Link className={styles.linkClass} to="/heating">Heating</Link>*!/*/}
                 </div>
             );
